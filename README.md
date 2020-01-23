@@ -1,2 +1,2 @@
-# iexcloud-bundle
-This bundle integrates the iexcloud api into Symfony
+# alpha-vantage-bundle
+This bundle integrates the alpha vantage api into Symfony
