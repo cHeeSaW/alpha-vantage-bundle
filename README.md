@@ -1,2 +1,2 @@
-#[WORK IN PROGRESS] alpha-vantage-bundle
+# WORK IN PROGRESS alpha-vantage-bundle
 This bundle integrates the alpha vantage api into Symfony
