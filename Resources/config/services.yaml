@@ -1,0 +1,30 @@
+parameters:
+  alpha_vantage.api.url: '%env(CHEESAW_ALPHA_VANTAGE_API_URL)%'
+  alpha_vantage.api.key: '%env(CHEESAW_ALPHA_VANTAGE_API_KEY)%'
+
+services:
+  # default configuration for services in *this* file
+  _defaults:
+    public: false
+
+
+  cHeeSaW\AlphaVantageBundle\Service\AlphaVantage:
+    class: cHeeSaW\AlphaVantageBundle\Service\AlphaVantageService
+    arguments:
+      $client: "@guzzle.client"
+      $alphaVantageApiUrl: '%alpha_vantage.api.url%'
+      $alphaVantageApiKey: '%alpha_vantage.api.key%'
+    public: true
+
+  cheesaw_alphavantage.alphavantage:
+    class: cHeeSaW\AlphaVantageBundle\Service\AlphaVantage
+    public: true
+
+  cheesaw_alphavantage.guzzle.client:
+    class: GuzzleHttp\Client
+
+  GuzzleHttp\ClientInterface:
+    alias: 'cheesaw_alphavantage.guzzle.client'
+
+
+

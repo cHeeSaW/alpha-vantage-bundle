@@ -1,0 +1,35 @@
+{
+  "name": "cheesaw/alpha-vantage-bundle",
+  "type": "symfony-bundle",
+  "description": "This Bundle integrates the Alphavantage API into Symfony",
+  "keywords": ["rest", "api", "wrapper", "symfony", "alphavantage", "stockmarket", "stock"],
+  "homepage": "https://github.com/cHeeSaW/alpha-vantage-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Martin Tomala",
+      "email": "cheesaw@gmx.net"
+    }
+  ],
+  "autoload":{
+    "psr-4":{
+      "cHeeSaW\\AlphaVantageBundle\\":  ""
+    },
+  "autoload-dev": {
+    "psr-4": {
+      "cHeeSaW\\AlphaVantageBundle\\Tests\\": "./Tests/"
+    }
+  }
+  },
+  "require": {
+    "php": "^7.4",
+    "guzzlehttp/guzzle": "^6.5",
+    "phpunit/phpunit": "^7.5",
+    "phpstan/phpstan": "^0.12",
+    "squizlabs/php_codesniffer": "^3.5",
+    "phpmd/phpmd": "^2.7"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master"
+  }
+}
