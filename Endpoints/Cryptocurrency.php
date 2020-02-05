@@ -9,15 +9,15 @@ use InvalidArgumentException;
 class Cryptocurrency implements Endpoint
 {
     public const CRYPTO_CURRENCY_EXCHANGE_RATE = 'CURRENCY_EXCHANGE_RATE';
-    public const CRYPTO_DIGITAL_CURRENCY_DAILY = 'DIGITAL_CURRENCY_DAILY';
-    public const CRYPTO_DIGITAL_CURRENCY_WEEKLY = 'DIGITAL_CURRENCY_WEEKLY';
-    public const CRYPTO_DIGITAL_CURRENCY_MONTHLY = 'DIGITAL_CURRENCY_MONTHLY';
+    public const CRYPTO_CURRENCY_DAILY = 'DIGITAL_CURRENCY_DAILY';
+    public const CRYPTO_CURRENCY_WEEKLY = 'DIGITAL_CURRENCY_WEEKLY';
+    public const CRYPTO_CURRENCY_MONTHLY = 'DIGITAL_CURRENCY_MONTHLY';
 
     private static array $validFunctions = [
         self::CRYPTO_CURRENCY_EXCHANGE_RATE,
-        self::CRYPTO_DIGITAL_CURRENCY_DAILY,
-        self::CRYPTO_DIGITAL_CURRENCY_MONTHLY,
-        self::CRYPTO_DIGITAL_CURRENCY_WEEKLY
+        self::CRYPTO_CURRENCY_DAILY,
+        self::CRYPTO_CURRENCY_MONTHLY,
+        self::CRYPTO_CURRENCY_WEEKLY
     ];
 
     private string $function;
