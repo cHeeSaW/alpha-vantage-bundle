@@ -22,8 +22,9 @@ class AlphaVantageServiceTest extends TestCase
 
     protected $subject;
 
-    public function setUp()
+    public function setUp(): void
     {
+        parent::setUp();
         $this->client = $this->prophesize(ClientInterface::class);
         $this->alphaVantageApiUrl = '';
         $this->alphaVantageApiKey = '';
