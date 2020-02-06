@@ -31,7 +31,7 @@ class StockTimeSeries implements Endpoint
         self::SYMBOL_SEARCH
     ];
 
-    public string $function;
+    private string $function;
 
     /**
      * A three-letter symbol from the forex currency list.
