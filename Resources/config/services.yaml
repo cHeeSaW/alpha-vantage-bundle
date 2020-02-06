@@ -1,5 +1,5 @@
 parameters:
-  alpha_vantage.api.url: '%env(CHEESAW_ALPHA_VANTAGE_API_URL)%'
+  alpha_vantage.api.url: 'https://www.alphavantage.co/query?'
   alpha_vantage.api.key: '%env(CHEESAW_ALPHA_VANTAGE_API_KEY)%'
 
 services:
