@@ -1,7 +1,8 @@
 # AlphaVantageBundle
 
 [![Build Status](https://img.shields.io/travis/cHeeSaW/alpha-vantage-bundle)](https://travis-ci.com/cHeeSaW/alpha-vantage-bundle)
-[![Build Status](https://img.shields.io/scrutinizer/quality/g/cHeeSaW/alpha-vantage-bundle/master)](https://travis-ci.com/cHeeSaW/alpha-vantage-bundle)
+[![Quality](https://img.shields.io/scrutinizer/quality/g/cHeeSaW/alpha-vantage-bundle/master)](https://scrutinizer-ci.com/g/cHeeSaW/alpha-vantage-bundle/)
+[![Coverage](https://img.shields.io/scrutinizer/coverage/g/cHeeSaW/alpha-vantage-bundle/master)](https://scrutinizer-ci.com/g/cHeeSaW/alpha-vantage-bundle/)
 > This bundle integrates the http://alphavantage.co/ Stock and Crypto API into Symfony 3/4/5.
 
 ## Requirements

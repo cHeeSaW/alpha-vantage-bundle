@@ -79,7 +79,7 @@ class ForeEx implements Endpoint
      */
     private string $outputsize;
 
-    public function __construct(string $function, string $dataType = self::DATATYPE_JSON, string $outputsize = self::OUTPUTSIZE_COMPACT)
+    public function __construct(string $function, string $dataType = self::DATATYPE_JSON, string $outputsize = self::OUTPUTSIZE_COMPACT, string $interval = self::INTERVAL_5_MIN)
     {
         if ($dataType !== self::DATATYPE_JSON && $dataType !== self::DATATYPE_CSV) {
             throw new InvalidArgumentException($dataType . ' is not valid, try: csv or json');
@@ -91,6 +91,12 @@ class ForeEx implements Endpoint
             );
         }
 
+        if (!in_array($interval, self::$validIntervals, true)) {
+            throw new InvalidArgumentException(
+                $interval . ' is not valid, valid ones are: 1min, 5min, 15min, 30min, 60min'
+            );
+        }
+
         if (!in_array($outputsize, [self::OUTPUTSIZE_COMPACT, self::OUTPUTSIZE_FULL], true)) {
             throw new InvalidArgumentException('Invalid outputsize given, valid values are: full, compact');
         }
@@ -98,6 +104,7 @@ class ForeEx implements Endpoint
         $this->outputsize = $outputsize;
         $this->dataType = $dataType;
         $this->function = $function;
+        $this->interval = $interval;
     }
 
     public function getQueryString(): string

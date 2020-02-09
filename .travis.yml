@@ -13,3 +13,6 @@ before_install:
 
 install:
   - composer update ${LOWEST-install} --prefer-stable
+
+script:
+  - composer run-script quality
