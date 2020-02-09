@@ -36,9 +36,12 @@
   },
   "require-dev": {
     "roave/security-advisories": "dev-master",
-    "phpunit/phpunit": "^8.0",
-    "phpstan/phpstan": "^0.12",
-    "squizlabs/php_codesniffer": "^3.5",
-    "phpmd/phpmd": "^2.7"
+    "phpunit/phpunit": "^8.0"
+  },
+  "scripts": {
+    "quality": [
+      "@phpunit"
+    ],
+    "phpunit": "phpdbg -qrr vendor/bin/phpunit --colors=never --testsuite=unittests --coverage-clover reports/coverage-clover.xml"
   }
 }
