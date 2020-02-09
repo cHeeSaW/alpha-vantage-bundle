@@ -24,7 +24,7 @@ class AlphaVantageExtensionTest extends TestCase
     {
         $containerBuilder = new ContainerBuilder();
 
-        $loaded = $this->subject->load([], $containerBuilder);
+        $this->subject->load([], $containerBuilder);
 
         self::assertSame($containerBuilder->getParameterBag()->get('alpha_vantage.api.url'), 'https://www.alphavantage.co/query?');
     }
