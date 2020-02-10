@@ -23,6 +23,7 @@
                 <directory>./Tests</directory>
                 <directory>./vendor</directory>
                 <directory>./Endpoints</directory>
+                <file>AlphaVantageBundle.php</file>
             </exclude>
         </whitelist>
     </filter>
