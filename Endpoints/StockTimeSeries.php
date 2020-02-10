@@ -54,19 +54,23 @@ class StockTimeSeries implements Endpoint
      */
     private string $outputsize;
 
-    public function __construct(string $function, string $dataType = self::DATATYPE_JSON, string $outputsize = self::OUTPUTSIZE_COMPACT)
-    {
+    public function __construct(
+        string $function,
+        string $dataType = self::DATATYPE_JSON,
+        string $outputsize = self::OUTPUTSIZE_COMPACT
+    ) {
         if (!in_array($outputsize, [self::OUTPUTSIZE_COMPACT, self::OUTPUTSIZE_FULL], true)) {
             throw new InvalidArgumentException('Invalid outputsize given, valid values are: full, compact');
         }
 
         if ($dataType !== self::DATATYPE_JSON && $dataType !== self::DATATYPE_CSV) {
             throw new InvalidArgumentException($dataType . ' is not valid, try: csv or json');
-
         }
+
         if (!in_array($function, self::$validFunctions, true)) {
             throw new InvalidArgumentException(
-                $function . ' is not valid, check https://www.alphavantage.co/documentation/ for valid Stock Time Series functions'
+                $function . ' is not valid, check https://www.alphavantage.co/documentation/ 
+                for valid Stock Time Series functions'
             );
         }
         $this->outputsize = $outputsize;

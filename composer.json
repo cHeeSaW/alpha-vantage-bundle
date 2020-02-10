@@ -38,14 +38,18 @@
     "roave/security-advisories": "dev-master",
     "phpunit/phpunit": "^9.0",
     "symfony/yaml": "^5.0",
-    "phpstan/phpstan": "^0.12.9"
+    "phpstan/phpstan": "^0.12.9",
+    "squizlabs/php_codesniffer": "^3.5",
+    "phpmd/phpmd": "^2.8"
   },
   "scripts": {
     "quality": [
       "@phpunit",
-      "@phpstan"
+      "@phpstan",
+      "@phpcs"
     ],
     "phpunit": "phpdbg -qrr vendor/bin/phpunit --colors=never --testsuite=unittests --coverage-clover reports/coverage-clover.xml",
-    "phpstan": "vendor/bin/phpstan analyse"
+    "phpstan": "vendor/bin/phpstan analyse",
+    "phpcs": "vendor/bin/phpcs"
   }
 }

@@ -59,7 +59,8 @@ class Cryptocurrency implements Endpoint
     {
         if (!in_array($function, self::$validFunctions, true)) {
             throw new InvalidArgumentException(
-                $function . ' is not valid, check https://www.alphavantage.co/documentation/ for valid Cryptocurrency functions'
+                $function . ' is not valid, check https://www.alphavantage.co/documentation/
+                for valid Cryptocurrency functions'
             );
         }
         $this->function = $function;

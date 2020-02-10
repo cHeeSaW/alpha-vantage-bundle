@@ -33,14 +33,16 @@ class ForeEx implements Endpoint
     private string $function;
 
     /**
-     * The currency you would like to get the exchange rate for. It can either be a physical currency or digital/crypto currency.
+     * The currency you would like to get the exchange rate for.
+     * It can either be a physical currency or digital/crypto currency.
      * @see https://www.alphavantage.co/physical_currency_list/
      * @see https://www.alphavantage.co/digital_currency_list/
      */
     public ?string $from_currency;
 
     /**
-     * The currency you would like to get the exchange rate for. It can either be a physical currency or digital/crypto currency.
+     * The currency you would like to get the exchange rate for.
+     * It can either be a physical currency or digital/crypto currency.
      * @see https://www.alphavantage.co/physical_currency_list/
      * @see https://www.alphavantage.co/digital_currency_list/
      */
@@ -79,8 +81,12 @@ class ForeEx implements Endpoint
      */
     private string $outputsize;
 
-    public function __construct(string $function, string $dataType = self::DATATYPE_JSON, string $outputsize = self::OUTPUTSIZE_COMPACT, string $interval = self::INTERVAL_5_MIN)
-    {
+    public function __construct(
+        string $function,
+        string $dataType = self::DATATYPE_JSON,
+        string $outputsize = self::OUTPUTSIZE_COMPACT,
+        string $interval = self::INTERVAL_5_MIN
+    ) {
         if ($dataType !== self::DATATYPE_JSON && $dataType !== self::DATATYPE_CSV) {
             throw new InvalidArgumentException($dataType . ' is not valid, try: csv or json');
         }
