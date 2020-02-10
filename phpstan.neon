@@ -1,0 +1,10 @@
+parameters:
+  paths:
+    - .
+
+  excludes_analyse:
+    - Tests/*
+    - vendor/*
+
+  level: 8
+  checkMissingIterableValueType: false

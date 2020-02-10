@@ -12,9 +12,9 @@ use GuzzleHttp\Psr7\Uri;
 
 class AlphaVantageService implements AlphaVantage
 {
-    private $client;
-    private $alphaVantageApiUrl;
-    private $alphaVantageApiKey;
+    private ClientInterface $client;
+    private string $alphaVantageApiUrl;
+    private string $alphaVantageApiKey;
 
     public function __construct(ClientInterface $client, string $alphaVantageApiUrl, string $alphaVantageApiKey)
     {
