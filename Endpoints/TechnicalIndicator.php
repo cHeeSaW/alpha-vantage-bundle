@@ -157,7 +157,8 @@ class TechnicalIndicator implements Endpoint
 
         if (!in_array($function, self::$validFunctions, true)) {
             throw new InvalidArgumentException(
-                $function . ' is not valid, check https://www.alphavantage.co/documentation/ for valid Technical Indicator functions'
+                $function . ' is not valid,
+                check https://www.alphavantage.co/documentation/ for valid Technical Indicator functions'
             );
         }
 

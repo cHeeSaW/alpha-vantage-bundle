@@ -36,38 +36,34 @@ class ForeEx implements Endpoint
     private string $function;
 
     /**
-     * The currency you would like to get the exchange rate for.
-     * It can either be a physical currency or digital/crypto currency.
      * @see https://www.alphavantage.co/physical_currency_list/
      * @see https://www.alphavantage.co/digital_currency_list/
      */
-    public ?string $from_currency;
+    private ?string $from_currency;
 
     /**
-     * The currency you would like to get the exchange rate for.
-     * It can either be a physical currency or digital/crypto currency.
      * @see https://www.alphavantage.co/physical_currency_list/
      * @see https://www.alphavantage.co/digital_currency_list/
      */
-    public ?string $to_currenccy;
+    private ?string $to_currenccy;
 
     /**
      * A three-letter symbol from the forex currency list.
      * @see https://www.alphavantage.co/physical_currency_list/
      */
-    public ?string $from_symbol;
+    private ?string $from_symbol;
 
     /**
      * A three-letter symbol from the forex currency list.
      * @see https://www.alphavantage.co/physical_currency_list/
      */
-    public ?string $to_symbol;
+    private ?string $to_symbol;
 
     /**
      * Time interval between two consecutive data points in the time series.
      * The following values are supported: 1min, 5min, 15min, 30min, 60min
      */
-    public ?string $interval = self::INTERVAL_5_MIN;
+    private string $interval;
 
     /**
      * By default, datatype=json. Strings json and csv are accepted with the following specifications:
@@ -86,6 +82,10 @@ class ForeEx implements Endpoint
 
     public function __construct(
         string $function,
+        string $from_currency = null,
+        string $to_currenccy = null,
+        string $from_symbol = null,
+        string $to_symbol = null,
         string $dataType = self::DATATYPE_JSON,
         string $outputsize = self::OUTPUTSIZE_COMPACT,
         string $interval = self::INTERVAL_5_MIN
@@ -114,6 +114,10 @@ class ForeEx implements Endpoint
         $this->dataType = $dataType;
         $this->function = $function;
         $this->interval = $interval;
+        $this->from_currency = $from_currency;
+        $this->to_currenccy = $to_currenccy;
+        $this->from_symbol = $from_symbol;
+        $this->to_symbol = $to_symbol;
     }
 
     public function getQueryString(): string
