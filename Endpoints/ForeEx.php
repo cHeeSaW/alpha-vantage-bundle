@@ -6,6 +6,9 @@ namespace cHeeSaW\AlphaVantageBundle\Endpoints;
 
 use InvalidArgumentException;
 
+/**
+ * @link https://www.alphavantage.co/documentation/#fx
+ */
 class ForeEx implements Endpoint
 {
     public const FOREX_CURRENCY_EXCHANGE_RATE = 'CURRENCY_EXCHANGE_RATE';

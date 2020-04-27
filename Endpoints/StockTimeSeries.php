@@ -7,6 +7,9 @@ namespace cHeeSaW\AlphaVantageBundle\Endpoints;
 use InvalidArgumentException;
 use function in_array;
 
+/**
+ * @link https://www.alphavantage.co/documentation/#time-series-data
+ */
 class StockTimeSeries implements Endpoint
 {
     public const TIME_SERIES_INTRADAY = 'TIME_SERIES_INTRADAY';

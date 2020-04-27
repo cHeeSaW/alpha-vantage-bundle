@@ -6,6 +6,9 @@ namespace cHeeSaW\AlphaVantageBundle\Endpoints;
 
 use InvalidArgumentException;
 
+/**
+ * @link https://www.alphavantage.co/documentation/#digital-currency
+ */
 class Cryptocurrency implements Endpoint
 {
     public const CRYPTO_CURRENCY_EXCHANGE_RATE = 'CURRENCY_EXCHANGE_RATE';
