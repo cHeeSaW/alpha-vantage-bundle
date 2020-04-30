@@ -6,6 +6,9 @@ namespace cHeeSaW\AlphaVantageBundle\Endpoints;
 
 use InvalidArgumentException;
 
+/**
+ * @link https://www.alphavantage.co/documentation/#digital-currency
+ */
 class Cryptocurrency implements Endpoint
 {
     public const CRYPTO_CURRENCY_EXCHANGE_RATE = 'CURRENCY_EXCHANGE_RATE';
@@ -23,47 +26,46 @@ class Cryptocurrency implements Endpoint
     private string $function;
 
     /**
-     * The currency you would like to get the exchange rate for.
-     * It can either be a physical currency or digital/crypto currency.
-     * For example: from_currency=USD or from_currency=BTC.
      * @see https://www.alphavantage.co/physical_currency_list/
      * @see https://www.alphavantage.co/digital_currency_list/
      */
-    public ?string $from_currency;
+    private ?string $from_currency;
 
     /**
-     * The destination currency for the exchange rate.
-     * It can either be a physical currency or digital/crypto currency.
-     * For example: to_currency=USD or to_currency=BTC.
      * @see https://www.alphavantage.co/physical_currency_list/
      * @see https://www.alphavantage.co/digital_currency_list/
      */
-    public ?string $to_currency;
+    private ?string $to_currency;
 
     /**
-     * he digital/crypto currency of your choice.
-     * It can be any of the currencies in the digital currency list.
-     * For example: symbol=BTC.
      * @see https://www.alphavantage.co/digital_currency_list/
      */
-    public ?string $symbol;
+    private ?string $symbol;
 
     /**
      * The exchange market of your choice. It can be any of the market in the market list.
      * For example: market=CNY.
      * @see https://www.alphavantage.co/physical_currency_list/
      */
-    public ?string $market;
+    private string $market;
 
-    public function __construct(string $function)
-    {
+    public function __construct(
+        string $function,
+        string $from_currency = null,
+        string $to_currency = null,
+        string $symbol = null
+    ) {
         if (!in_array($function, self::$validFunctions, true)) {
             throw new InvalidArgumentException(
                 $function . ' is not valid, check https://www.alphavantage.co/documentation/
                 for valid Cryptocurrency functions'
             );
         }
+
         $this->function = $function;
+        $this->from_currency = $from_currency;
+        $this->to_currency = $to_currency;
+        $this->symbol = $symbol;
     }
 
     public function getQueryString(): string

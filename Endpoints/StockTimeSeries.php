@@ -7,6 +7,9 @@ namespace cHeeSaW\AlphaVantageBundle\Endpoints;
 use InvalidArgumentException;
 use function in_array;
 
+/**
+ * @link https://www.alphavantage.co/documentation/#time-series-data
+ */
 class StockTimeSeries implements Endpoint
 {
     public const TIME_SERIES_INTRADAY = 'TIME_SERIES_INTRADAY';
@@ -34,10 +37,9 @@ class StockTimeSeries implements Endpoint
     private string $function;
 
     /**
-     * A three-letter symbol from the forex currency list.
      * @see https://www.alphavantage.co/physical_currency_list/
      */
-    public ?string $symbol;
+    private ?string $symbol;
 
     /**
      * By default, datatype=json. Strings json and csv are accepted with the following specifications:
@@ -56,6 +58,7 @@ class StockTimeSeries implements Endpoint
 
     public function __construct(
         string $function,
+        string $symbol = null,
         string $dataType = self::DATATYPE_JSON,
         string $outputsize = self::OUTPUTSIZE_COMPACT
     ) {
@@ -76,6 +79,7 @@ class StockTimeSeries implements Endpoint
         $this->outputsize = $outputsize;
         $this->dataType = $dataType;
         $this->function = $function;
+        $this->symbol = $symbol;
     }
 
     public function getQueryString(): string
