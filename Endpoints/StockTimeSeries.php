@@ -55,12 +55,14 @@ class StockTimeSeries implements Endpoint
      * each API call.
      */
     private string $outputsize;
+    private string $interval;
 
     public function __construct(
         string $function,
         string $symbol = null,
         string $dataType = self::DATATYPE_JSON,
-        string $outputsize = self::OUTPUTSIZE_COMPACT
+        string $outputsize = self::OUTPUTSIZE_COMPACT,
+        string $interval = self::INTERVAL_5_MIN
     ) {
         if (!in_array($outputsize, [self::OUTPUTSIZE_COMPACT, self::OUTPUTSIZE_FULL], true)) {
             throw new InvalidArgumentException('Invalid outputsize given, valid values are: full, compact');
@@ -76,10 +78,12 @@ class StockTimeSeries implements Endpoint
                 for valid Stock Time Series functions'
             );
         }
+
         $this->outputsize = $outputsize;
         $this->dataType = $dataType;
         $this->function = $function;
         $this->symbol = $symbol;
+        $this->interval = $interval;
     }
 
     public function getQueryString(): string
