@@ -33,8 +33,7 @@ Just use the client, it will be autowired by Symfony into your Services/Controll
  */
 public function alphaVantageTestAction(AlphaVantage $alphaVantageClient): Response
 {
-    $stockTimeSeries = new StockTimeSeries(StockTimeSeries::GLOBAL_QUOTE);
-    $stockTimeSeries->symbol = 'BLDP';
+    $stockTimeSeries = new StockTimeSeries(StockTimeSeries::GLOBAL_QUOTE, 'BLDP');
     $response = $alphaVantageClient->get($stockTimeSeries);
     return new Response($response);
 }
