@@ -21,25 +21,19 @@ class AlphaVantageServiceTest extends TestCase
     /** @var ClientInterface|ObjectProphecy */
     private $client;
 
-    /** @var string */
-    private $alphaVantageApiUrl;
-
-    /** @var string */
-    private $alphaVantageApiKey;
-
     protected $subject;
 
     public function setUp(): void
     {
         parent::setUp();
         $this->client = $this->prophesize(ClientInterface::class);
-        $this->alphaVantageApiUrl = '';
-        $this->alphaVantageApiKey = '';
+        $alphaVantageApiUrl = '';
+        $alphaVantageApiKey = '';
 
         $this->subject = new AlphaVantageService(
             $this->client->reveal(),
-            $this->alphaVantageApiUrl,
-            $this->alphaVantageApiKey
+            $alphaVantageApiUrl,
+            $alphaVantageApiKey
         );
     }
 
