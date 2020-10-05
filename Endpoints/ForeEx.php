@@ -120,6 +120,56 @@ class ForeEx implements Endpoint
         $this->to_symbol = $to_symbol;
     }
 
+    public static function getValidFunctions(): array
+    {
+        return self::$validFunctions;
+    }
+
+    public static function getValidIntervals(): array
+    {
+        return self::$validIntervals;
+    }
+
+    public function getFunction(): string
+    {
+        return $this->function;
+    }
+
+    public function getFromCurrency(): ?string
+    {
+        return $this->from_currency;
+    }
+
+    public function getToCurrenccy(): ?string
+    {
+        return $this->to_currenccy;
+    }
+
+    public function getFromSymbol(): ?string
+    {
+        return $this->from_symbol;
+    }
+
+    public function getToSymbol(): ?string
+    {
+        return $this->to_symbol;
+    }
+
+    public function getInterval(): string
+    {
+        return $this->interval;
+    }
+
+    public function getDataType(): string
+    {
+        return $this->dataType;
+    }
+
+    public function getOutputsize(): string
+    {
+        return $this->outputsize;
+    }
+
     public function getQueryString(): string
     {
         return http_build_query($this);

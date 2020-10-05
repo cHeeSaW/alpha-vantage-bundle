@@ -68,6 +68,36 @@ class Cryptocurrency implements Endpoint
         $this->symbol = $symbol;
     }
 
+    public static function getValidFunctions(): array
+    {
+        return self::$validFunctions;
+    }
+
+    public function getFunction(): string
+    {
+        return $this->function;
+    }
+
+    public function getFromCurrency(): ?string
+    {
+        return $this->from_currency;
+    }
+
+    public function getToCurrency(): ?string
+    {
+        return $this->to_currency;
+    }
+
+    public function getSymbol(): ?string
+    {
+        return $this->symbol;
+    }
+
+    public function getMarket(): string
+    {
+        return $this->market;
+    }
+
     public function getQueryString(): string
     {
         return http_build_query($this);

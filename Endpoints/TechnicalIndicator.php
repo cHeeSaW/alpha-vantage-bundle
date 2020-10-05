@@ -182,6 +182,51 @@ class TechnicalIndicator implements Endpoint
         $this->datatype = $dataType;
     }
 
+    public static function getValidFunctions(): array
+    {
+        return self::$validFunctions;
+    }
+
+    public static function getValidIntervals(): array
+    {
+        return self::$validIntervals;
+    }
+
+    public static function getValidSeriesTypes(): array
+    {
+        return self::$validSeriesTypes;
+    }
+
+    public function getFunction(): string
+    {
+        return $this->function;
+    }
+
+    public function getSymbol(): string
+    {
+        return $this->symbol;
+    }
+
+    public function getInterval(): string
+    {
+        return $this->interval;
+    }
+
+    public function getTimePeriod(): int
+    {
+        return $this->time_period;
+    }
+
+    public function getSeriesType(): string
+    {
+        return $this->series_type;
+    }
+
+    public function getDatatype(): string
+    {
+        return $this->datatype;
+    }
+
     public function getQueryString(): string
     {
         return http_build_query($this);

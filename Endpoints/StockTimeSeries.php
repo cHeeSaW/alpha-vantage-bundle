@@ -86,6 +86,36 @@ class StockTimeSeries implements Endpoint
         $this->interval = $interval;
     }
 
+    public static function getValidFunctions(): array
+    {
+        return self::$validFunctions;
+    }
+
+    public function getFunction(): string
+    {
+        return $this->function;
+    }
+
+    public function getSymbol(): ?string
+    {
+        return $this->symbol;
+    }
+
+    public function getDataType(): string
+    {
+        return $this->dataType;
+    }
+
+    public function getOutputsize(): string
+    {
+        return $this->outputsize;
+    }
+
+    public function getInterval(): string
+    {
+        return $this->interval;
+    }
+
     public function getQueryString(): string
     {
         return http_build_query($this);
