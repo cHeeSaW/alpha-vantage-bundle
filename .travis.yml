@@ -3,13 +3,11 @@ os: linux
 dist: bionic
 php:
   - '7.4'
+  - '8.0'
 
 env:
   - LOWEST=""
   - LOWEST="--prefer-lowest"
-
-before_install:
-  - composer global require hirak/prestissimo
 
 install:
   - composer update ${LOWEST-install} --prefer-stable
