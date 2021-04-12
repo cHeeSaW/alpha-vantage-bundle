@@ -7,7 +7,6 @@ php:
 
 env:
   - LOWEST=""
-  - LOWEST="--prefer-lowest"
 
 install:
   - composer update ${LOWEST-install} --prefer-stable
