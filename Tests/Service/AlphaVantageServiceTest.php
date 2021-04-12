@@ -12,16 +12,19 @@ use GuzzleHttp\Exception\TransferException;
 use GuzzleHttp\Psr7\Uri;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 
 class AlphaVantageServiceTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var ClientInterface|ObjectProphecy */
     private $client;
 
-    protected $subject;
+    protected AlphaVantageService $subject;
 
     public function setUp(): void
     {
